@@ -1,3 +1,4 @@
+//this is arduino code with uses IR sensors
 void setup()
 {
   Serial.begin(9600);
