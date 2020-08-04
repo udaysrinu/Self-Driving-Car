@@ -10,4 +10,5 @@ based on Image Processing using Convolutional Neural Networks + OpenCV.
 ![alt text](https://github.com/udaysrinu/Self-Driving-Car/blob/master/Arena.png?raw=true)
 - In the cases where deadlines that are marked by black lines on the arena ,are to be handled IR sensors are arranged in front of the bot to detect them.
 - The motors were controlled using a microcontroller, Arduino UNO which is serial communicated with raspberry pi.
+![alt text](https://github.com/udaysrinu/Self-Driving-Car/blob/master/body%20of%20the%20robot.jpeg?raw=true)
 - This robot could also be used as a remote control car to race around the track,when we manually input the keys,using serial communication of arduino and raspberry pi,And can also be used as a line follower bot using IR sensors and arduino.
