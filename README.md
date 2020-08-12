@@ -7,7 +7,7 @@ based on Image Processing using Convolutional Neural Networks + OpenCV.
 - Raspberry Pi 3 was used for nominal real time image processing using open CV which is powered by the 12V adapter to avoid input power fluctuations.
 - The model was trained using KERAS library with 2000 images each for "left, right, straight, sharp left, sharp right,stop" to follow a track.Sample images of the above categories in provided in the sample data section of the repository.
 - However the Arena for which the model trained to run for has limited features like stop sign ,no entry,steep left/right,front and stop sign.
-![alt text](https://github.com/udaysrinu/Self-Driving-Car/blob/master/Arena.png?raw=true)
+![alt text](https://github.com/udaysrinu/Self-Driving-Car/blob/master/Arena.png=250x250)
 - In the cases where deadlines that are marked by black lines on the arena ,are to be handled IR sensors are arranged in front of the bot to detect them.
 - The motors were controlled using a microcontroller, Arduino UNO which is serial communicated with raspberry pi.
 ![alt text](https://github.com/udaysrinu/Self-Driving-Car/blob/master/body%20of%20the%20robot.jpeg?raw=true)
