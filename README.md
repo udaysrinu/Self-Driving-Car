@@ -1,7 +1,7 @@
 # Self-Driving-Car
 based on Image Processing using Convolutional Neural Networks + OpenCV.
 
-- A project is based on Image Processing using Deep learning + OpenCV,which classifies between the various images.
+- The project is based on Image Processing using Deep learning + OpenCV,which classifies between the various images.
 - Raspberry Pi CAM was used for all the real time image input .
 - Images were simplified using OpenCV - hough transform,canny edge detection to make it easier for our neural network to identify features and colour/region masking to avoid unnecessary striking features to interfere in the model
 - Raspberry Pi 3 was used for nominal real time image processing using open CV which is powered by the 12V adapter to avoid input power fluctuations.
