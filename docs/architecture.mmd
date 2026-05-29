@@ -1,0 +1,20 @@
+flowchart LR
+    Cam[Raspberry Pi Camera<br/>VideoCapture@0]
+    Flip[cv2.flip vertical]
+    Mask[RGB threshold mask<br/>R<40 G<50 B<50 -> 0,0,0]
+    Resize[cv2.resize 32x32x3]
+    CNN[Keras CNN<br/>3x Conv2D 32@3x3 + MaxPool<br/>Flatten -> Dense 128 -> Dense 5]
+    Cls{argmax class}
+    Serial[pyserial<br/>/dev/ttyACM0 9600 baud]
+    Ard[Arduino UNO<br/>L293D motor driver]
+    Motors[Two DC motors<br/>differential drive]
+    IR[IR sensors<br/>black-line stop]
+
+    Cam --> Flip --> Mask --> Resize --> CNN --> Cls
+    Cls -- "0:w forward" --> Serial
+    Cls -- "1:a left" --> Serial
+    Cls -- "2:d right" --> Serial
+    Cls -- "3:z steep-left" --> Serial
+    Cls -- "4:c steep-right" --> Serial
+    Serial --> Ard --> Motors
+    IR -.-> Ard
