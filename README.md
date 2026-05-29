@@ -10,7 +10,21 @@ A monocular-vision autonomous RC car prototype that drives itself around a marke
 
 A Raspberry Pi 3 with a USB/CSI camera streams frames at runtime. Each frame is colour-masked (to suppress everything that isn't the dark track / signs), resized to 32x32x3, and classified by a small Keras CNN into one of five driving commands: forward, left, right, steep-left, steep-right. The predicted class is mapped to a single ASCII byte (`w`, `a`, `d`, `z`, `c`) and written over USB serial (`/dev/ttyACM0` at 9600 baud) to an Arduino UNO running an L293D motor driver, which controls two DC motors in a differential-drive layout. IR sensors mounted at the front detect black "deadline" lines on the arena and stop the bot independent of the CNN.
 
-The arena is hand-built (`Arena.png`) with a fixed visual vocabulary — track edges, steep-turn markers, and a stop sign — so the CNN only needs to recognise a small number of classes. The same hardware can also be driven (a) manually as an RC car using keystrokes over the same serial link, or (b) as a pure line-follower using just IR sensors and the Arduino (no Pi, no CNN).
+### The arena
+
+The track is hand-built with a fixed visual vocabulary — track edges, steep-turn markers, a stop sign — so the CNN only needs to recognise a small number of classes.
+
+![Arena layout](Arena.png)
+
+### The bot
+
+Raspberry Pi 3 + Arduino UNO + L293D motor driver, mounted on a differential-drive chassis with a Pi camera up front and IR reflectance sensors near the front wheels.
+
+![Body of the robot](body%20of%20the%20robot.jpeg?raw=true)
+
+![Robot in the arena](Robot%20in%20the%20arena.jpeg?raw=true)
+
+The same hardware can also be driven (a) manually as an RC car using keystrokes over the same serial link, or (b) as a pure line-follower using just IR sensors and the Arduino (no Pi, no CNN).
 
 ## Hardware
 
@@ -19,8 +33,6 @@ The arena is hand-built (`Arena.png`) with a fixed visual vocabulary — track e
 - 2x DC gear motors, differential drive chassis
 - 2x IR reflectance sensors (front)
 - USB serial between Pi and Arduino at 9600 baud
-
-Photos: [`body of the robot.jpeg`](body%20of%20the%20robot.jpeg), [`Robot in the arena.jpeg`](Robot%20in%20the%20arena.jpeg).
 
 ## Data pipeline
 
